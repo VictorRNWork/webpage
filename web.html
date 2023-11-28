@@ -324,12 +324,7 @@
                     </style>
                     <p class="small">About Me</p>
                     <h2>Computer engineer focused on Artificial Intelligence</h2>
-                    <p class="maquina-escribir" id="maquina-escribir">
-                        I am currently living in Seville, working at Idener. Idener is an european company composed by a team of engineers, scientists and software
-                        developers exploring the potential of AI for solving challenging science and engineering problems. Researcher is the role I am fulfilling at this company. <br>
-                        Having studied at the University of Seville and finishing my degree in computer engineer with a final degree project in applied Algebra about Hadamard matrices,<br>
-                        I have developed this webpage so it is easier to know about me, my projects, past experiences and what I am heading for.
-                    </p>
+                    <p class="maquina-escribir" id="maquina-escribir"></p>
                 </div>
                 <div class="motivations principal hide" id="motivations">
                     <style>
@@ -455,11 +450,192 @@
                     </p>
                 </div>
                 <div class="contact-me principal hide" id="contact-me">
+                    <style>
+                        .email-container {
+                            position: relative;
+                            text-align: center;
+                            margin: auto;
+                            width: fit-content;
+                            padding: 2em;
+                        }
+                        .i-mail:after, .i-mail .mail-anim:after {
+                            content: "";
+                            position: absolute;
+                            bottom: 5px;
+                            left: 5px;
+                            width: fit-content;
+                            height: 4px;
+                            border-bottom: 2px solid black;
+                            border-top: 2px solid black;
+                        }
+
+                        .i-mail:before, .i-mail .mail-anim:before {
+                            content: "";
+                            position: absolute;
+                            top: 5px;
+                            right: 5px;
+                            width: 7px;
+                            height: 6px;
+                            background: black;
+                        }
+
+                        .i-success:after, .i-success .success-anim:after {
+                            content: "";
+                            position: absolute;
+                            bottom: 12px;
+                            left: 11px;
+                            width: 15px;
+                            height: 8px;
+                            border-bottom: 2px solid #e0b341;
+                            border-left: 2px solid #e0b341;
+                            transform: rotate(-45deg);
+                        }
+
+                        .email-animation {
+                            width: fit-content;
+                            height: 2rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                        }
+
+                        .i-mail, .i-mail .mail-anim {
+                            width: 40px;
+                            height: 30px;
+                            border-radius: 5% 5%;
+                            border: 2px solid black;
+                            position: relative;
+                            animation: transformS 0.3s linear;
+                        }
+                        @keyframes transformS {
+                            50% {
+                                transform: scale(0.5, 0.5);
+                                opacity: 0.5;
+                            }
+                        }
+                        .i-mail .mail-anim {
+                            margin: -2px 0 0 -2px;
+                            animation: moveL 0.8s linear;
+                        }
+                        @keyframes moveL {
+                            100% {
+                                transform: translateX(220px) rotateY(90deg);
+                            }
+                        }
+
+                        .email-line {
+                            padding: 1px 10em;
+                            background-image: linear-gradient(to right, #000 30%, rgba(255, 255, 255, 0) 0%);
+                            background-position: top;
+                            background-size: 15px 2px;
+                            background-repeat: repeat-x;
+                        }
+
+                        .i-success, .i-success .success-anim {
+                            width: 40px;
+                            height: 30px;
+                            border-radius: 5% 5%;
+                            border: 2px solid #e0b341;
+                            position: relative;
+                            animation: transformB 0.3s 1.4s linear forwards;
+                        }
+                        .i-success:after, .i-success .success-anim:after {
+                            animation: transformBA 0.3s 1.4s linear forwards;
+                        }
+                        @keyframes transformB {
+                            50% {
+                                transform: scale(1.5, 1.5);
+                                background: #e0b341;
+                            }
+                            100% {
+                                background: #e0b341;
+                            }
+                        }
+                        @keyframes transformBA {
+                            100% {
+                                border-bottom: 2px solid #fff;
+                                border-left: 2px solid #fff;
+                            }
+                        }
+                        .i-success .success-anim {
+                            margin: -2px 0 0 -2px;
+                            animation: moveR 0.8s 1s linear;
+                        }
+                        @keyframes moveR {
+                            0% {
+                                transform: translateX(-10em) rotateY(90deg);
+                            }
+                            50% {
+                                transform: translateX(0) rotateY(0);
+                            }
+                        }
+
+                        .message {
+                            text-align: center;
+                            margin-top: 10px;
+                            font-family: Roboto, sans-serif;
+                        }
+                        .phone {
+                            display: flex;
+                            width: 60px;
+                            height: 60px;
+                            font-size: 40px;
+                            margin:auto;
+                            color: #9e9e9e;
+                            animation: ring 4s .7s ease-in-out infinite;
+                            transform-origin: 50% 4px;
+                        }
+
+                        .phone-container{
+                            display: flex;
+                            padding: 1em;
+                        }
+
+                        @keyframes ring {
+                            0% { transform: rotate(0); }
+                            5% { transform: rotate(30deg); }
+                            10% { transform: rotate(-28deg); }
+                            15% { transform: rotate(34deg); }
+                            20% { transform: rotate(-32deg); }
+                            25% { transform: rotate(30deg); }
+                            30% { transform: rotate(-28deg); }
+                            35% { transform: rotate(26deg); }
+                            40% { transform: rotate(-24deg); }
+                            45% { transform: rotate(22deg); }
+                            50% { transform: rotate(-20deg); }
+                            55% { transform: rotate(18deg); }
+                            60% { transform: rotate(-16deg); }
+                            65% { transform: rotate(14deg); }
+                            70% { transform: rotate(-12deg); }
+                            75% { transform: rotate(10deg); }
+                            80% { transform: rotate(-8deg); }
+                            85% { transform: rotate(6deg); }
+                            90% { transform: rotate(-4deg); }
+                            95% { transform: rotate(2deg); }
+                            100% { transform: rotate(-1deg); }
+                        }
+                    </style>
                     <p class="small">Contact Me!</p>
                     <h2>I put the following options at your disposal!</h2>
-                    <p>
-                        
-                    </p>
+                    <h3> By Email!</h3>
+                    <div class="email-container">
+                        <div class="email-animation">
+                            <div class="i-mail">
+                                <div class="mail-anim"></div>
+                            </div>
+                            <div class="email-line"></div>
+                            <div class="i-success">
+                                <div class="success-anim"></div>
+                            </div>
+                        </div>
+                        <p>victor.rnwork@gmail.com</p>
+                    </div>
+                    <h3> By Phone!</h3>
+                    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+                    <div class="phone-container">
+                        <span class="phone fa fa-phone"></span>
+                    </div>
+                    <p style="text-align: center;"> I will provide you my phone once you get in touch with me through LinkedIn!</p>
                 </div>
             </div>
         </section>
