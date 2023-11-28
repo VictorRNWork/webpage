@@ -1,0 +1,721 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Victor R.</title>
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="header.css" />
+    </head>
+    <body>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+            *,
+            *::after,
+            *::before {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            }
+
+            .html {
+                height: 100%;
+                font-size: 62.5%;
+            }
+
+            body {
+                font-family: "Poppins", sans-serif;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+        </style>
+        <nav class="navbar">
+            <style>
+                
+                .container {
+                    max-width: 1200px;
+                    width: 90%;
+                    margin: auto;
+                }
+                /* ............/navbar/............ *
+
+                /* desktop mode............/// */
+
+                .navbar input[type="checkbox"],
+                .navbar .hamburger-lines {
+                    display: none;
+                }
+
+                .navbar {
+                    box-shadow: 0px 5px 10px 0px #aaa;
+                    position: fixed;
+                    width: 100%;
+                    background: #fff;
+                    color: #000;
+                    opacity: 0.85;
+                    height: 50px;
+                    z-index: 12;
+                }
+
+                .navbar-container {
+                    display: flex;
+                    justify-content: space-between;
+                    height: 64px;
+                    align-items: center;
+                }
+
+                .menu-items {
+                    order: 2;
+                    display: flex;
+                }
+
+                .menu-items li {
+                    list-style: none;
+                    margin-left: 1.5rem;
+                    margin-bottom: 0.5rem;
+                    font-size: 1.2rem;
+                }
+
+                .menu-items a {
+                    text-decoration: none;
+                    color: #444;
+                    font-weight: 500;
+                    transition: color 0.3s ease-in-out;
+                }
+
+                .menu-items a:hover {
+                    color: #4f92ac;
+                    transition: color 0.3s ease-in-out;
+                }
+
+                .logo {
+                    order: 1;
+                    font-size: 2.3rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                /* ......../ media query /.......... */
+
+                @media (max-width: 768px) {
+                    .navbar {
+                        opacity: 0.95;
+                    }
+
+                    .navbar-container input[type="checkbox"],
+                    .navbar-container .hamburger-lines {
+                        display: block;
+                    }
+
+                    .navbar-container {
+                        display: block;
+                        position: relative;
+                        height: 64px;
+                    }
+
+                    .navbar-container input[type="checkbox"] {
+                        position: absolute;
+                        display: block;
+                        height: 32px;
+                        width: 30px;
+                        top: 20px;
+                        left: 20px;
+                        z-index: 5;
+                        opacity: 0;
+                    }
+
+                    .navbar-container .hamburger-lines {
+                        display: block;
+                        height: 23px;
+                        width: 35px;
+                        position: absolute;
+                        top: 17px;
+                        left: 20px;
+                        z-index: 2;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                    }
+
+                    .navbar-container .hamburger-lines .line {
+                        display: block;
+                        height: 4px;
+                        width: 100%;
+                        border-radius: 10px;
+                        background: #333;
+                    }
+
+                    .navbar-container .hamburger-lines .line1 {
+                        transform-origin: 0% 0%;
+                        transition: transform 0.4s ease-in-out;
+                    }
+
+                    .navbar-container .hamburger-lines .line2 {
+                        transition: transform 0.2s ease-in-out;
+                    }
+
+                    .navbar-container .hamburger-lines .line3 {
+                        transform-origin: 0% 100%;
+                        transition: transform 0.4s ease-in-out;
+                    }
+
+                    .navbar .menu-items {
+                        padding-top: 100px;
+                        background: #fff;
+                        height: 100vh;
+                        max-width: 300px;
+                        transform: translate(-150%);
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: -40px;
+                        padding-left: 50px;
+                        transition: transform 0.5s ease-in-out;
+                        box-shadow: 5px 0px 10px 0px #aaa;
+                    }
+
+                    .navbar .menu-items li {
+                        margin-bottom: 1.5rem;
+                        font-size: 1.3rem;
+                        font-weight: 500;
+                    }
+
+                    .logo {
+                        position: absolute;
+                        top: 5px;
+                        right: 15px;
+                        font-size: 2rem;
+                    }
+
+                    .navbar-container input[type="checkbox"]:checked ~ .menu-items {
+                        transform: translateX(0);
+                    }
+
+                    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+                        transform: rotate(35deg);
+                    }
+
+                    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+                        transform: scaleY(0);
+                    }
+
+                    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+                        transform: rotate(-35deg);
+                    }
+
+                    @media (max-width: 500px) {
+                        html {
+                            font-size: 65%;
+                        }
+
+                        .navbar .menu-items li{
+                            font-size: 1.6rem;
+                        }
+
+                        .testimonial-container {
+                            flex-direction: column;
+                            text-align: center;
+                        }
+
+                        .food-menu-container img {
+                            margin: auto;
+                        }
+
+                        .food-menu-item {
+                            flex-direction: column;
+                            text-align: center;
+                        }
+
+                        .form-container {
+                            width: 90%;
+                        }
+
+                        .contact-container {
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                        .contact-img {
+                            width: 90%;
+                            margin: 3rem auto;
+                        } 
+
+                        .logo {
+                            position: absolute;
+                            top: 06px;
+                            right: 15px;
+                            font-size: 3rem;
+                        }
+
+                        .navbar .menu-items li {
+                            margin-bottom: 2.5rem;
+                            font-size: 1.8rem;
+                            font-weight: 500;
+                        }
+                    }
+
+                    @media (min-width: 769px) and (max-width: 1200px) {
+                        .img-container h3 {
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    @media (orientation: landscape) and (max-height: 500px) {
+                        .showcase-area {
+                            height: 50vmax;
+                        }
+                    }
+                }
+
+            </style>
+            <div class="navbar-container container">
+                <input type="checkbox" name="" id="">
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+                <ul class="menu-items">
+                    <li><a href="#about-me" name="about-me">Home</a></li>
+                    <li><a href="#motivations" name="motivations">Motivations</a></li>
+                    <li><a href="#portfolio" name="portfolio">Porftfolio</a></li>
+                    <li><a href="#contact-me" name="contact-me">Contact Me</a></li>
+                </ul>
+                <h1 class="logo">Victor Rosario</h1>
+            </div>
+        </nav>
+        <section id="about">
+            <div class="general-container" id="general-container">
+                <div class="about-me principal" id="about-me">
+                    <style>
+                        div.general-container {
+                            flex: 1;
+                            padding-top: 3.5em;
+                            padding-left: 1em;
+                            min-height: 80vh;
+                        }
+
+                        .hide {
+                            display: none;
+                        }
+
+                        h3 {
+                            text-align: center;
+                        }
+
+                        p.maquina-escribir{
+                            display: inline;
+                            border-right: 0.15em solid #18bdec;
+                            animation: blink 1s steps(1) infinite;
+                        }
+
+                        @keyframes blink {
+                            50% {
+                                border-color: transparent;
+                            }
+                        }
+                    </style>
+                    <p class="small">About Me</p>
+                    <h2>Computer engineer focused on Artificial Intelligence</h2>
+                    <p class="maquina-escribir" id="maquina-escribir">
+                        I am currently living in Seville, working at Idener. Idener is an european company composed by a team of engineers, scientists and software
+                        developers exploring the potential of AI for solving challenging science and engineering problems. Researcher is the role I am fulfilling at this company. <br>
+                        Having studied at the University of Seville and finishing my degree in computer engineer with a final degree project in applied Algebra about Hadamard matrices,<br>
+                        I have developed this webpage so it is easier to know about me, my projects, past experiences and what I am heading for.
+                    </p>
+                </div>
+                <div class="motivations principal hide" id="motivations">
+                    <style>
+                        .card-container {
+                            display: grid;
+                            padding: 1em;
+                            margin: auto;
+                            align-content: center;
+                            gap: 20px;
+                            grid-template-columns: repeat(auto-fill,  minmax(300px, 1fr));
+                        }
+                        
+                        .card-icon {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                        .flip-card {
+                            background-color: transparent;
+                            width: 300px;
+                            min-height: 300px;
+                            height: auto;
+                            max-height: 350px;
+                            perspective: 1000px; /* Remove this if you don't want the 3D effect */
+                        }
+
+                        /* This container is needed to position the front and back side */
+                        .flip-card-inner {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            text-align: center;
+                            transition: transform 0.8s;
+                            transform-style: preserve-3d;
+                        }
+
+                        /* Do an horizontal flip when you move the mouse over the flip box container */
+                        .flip-card:hover .flip-card-inner {
+                            transform: rotateY(180deg);
+                        }
+
+                        /* Position the front and back side */
+                        .flip-card-front, .flip-card-back {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            -webkit-backface-visibility: hidden; /* Safari */
+                            backface-visibility: hidden;
+                        }
+
+                        /* Style the front side (fallback if image is missing) */
+                        .flip-card-front {
+                            border-radius: 10px;
+                            box-shadow: 0px 5px 10px 0px #aaa;
+                            background-color: #81c2de;
+                            color: black;
+                            padding: 20%;
+                        }
+
+                        /* Style the back side */
+                        .flip-card-back {
+                            border-radius: 10px;
+                            box-shadow: 0px 5px 10px 0px #aaa;
+                            background-color: #81c2de;
+                            color: black;
+                            transform: rotateY(180deg);
+                        }
+                    </style>
+                    
+                    <p class="small">This motivate me!</p>
+                    <h2>What are my interests?</h2>
+                    <div class="card-container">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <image class="card-icon" src="https://static-00.iconduck.com/assets.00/deep-learning-icon-256x256-hcwwjlij.png"/>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Deep Learning</h3>
+                                    <p>
+                                        In the edge computing the data is processed near to the source, avoiding the need of a computing cluster, a network for the comunication,
+                                        and the storage of the data. The optimization of Neural Networks and algorithms realised by such computers as Jetsons really gets all my excitement. 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <image class="card-icon" src="https://static.thenounproject.com/png/1109535-200.png" />
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Edge Computing</h3>
+                                    <p>
+                                        In the edge computing the data is processed near to the source, avoiding the need of a computing cluster, a network for the comunication,
+                                        and the storage of the data. The optimization of Neural Networks and algorithms realised by such computers as Jetsons really gets all my excitement. 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <image class="card-icon" src="https://cdn-icons-png.flaticon.com/512/10306/10306185.png" />
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Natural Language Processing</h3>
+                                    <p>
+                                        In the edge computing the data is processed near to the source, avoiding the need of a computing cluster, a network for the comunication,
+                                        and the storage of the data. The optimization of Neural Networks and algorithms realised by such computers as Jetsons really gets all my excitement. 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio principal hide" id="portfolio">
+                    <p class="small">Changing Me</p>
+                    <h2>I am a computer engineer focused on Artificial Intelligence</h2>
+                    <p>
+                        
+                    </p>
+                </div>
+                <div class="contact-me principal hide" id="contact-me">
+                    <p class="small">Contact Me!</p>
+                    <h2>I put the following options at your disposal!</h2>
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <style>
+                footer {
+                    margin-top: auto;
+                }                
+                svg {
+                    width: 9em;
+                    height: 9em;
+                }
+                
+                /* SMOKE */
+                #smoke-1 {
+                    stroke-dasharray: 0, 10;
+                    animation: smoke 6s ease infinite;
+                }
+                
+                #smoke-2 {
+                    stroke-dasharray: 0, 10;
+                    animation: smoke 6s 0.5s ease infinite;
+                }
+                
+                @keyframes smoke {
+                    0% { stroke-dasharray: 0, 10; }
+                    50% { stroke-dasharray: 10, 0; }
+                    100% { stroke-dasharray: 10, 0; opacity: 0; }
+                }
+                
+                /* WRITING */
+                #line-1 {
+                    opacity: 0;
+                    animation: 4s linear 0.5s infinite normal none running writing;
+                }
+                
+                #line-2 {
+                    opacity: 0;
+                    animation: 4s linear 1s infinite normal none running writing;
+                }
+                
+                #line-3 {
+                    opacity: 0;
+                    animation: 4s linear 1.5s infinite normal none running writing;
+                }
+                
+                #line-4 {
+                    opacity: 0;
+                    animation: 4s linear 2s infinite normal none running writing;
+                }
+                
+                @keyframes writing {
+                    0% { width: 0px; opacity: 1;}
+                    25% { width: 14px; opacity: 1;}
+                }
+
+                
+                .wrapper {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: all;
+                    height: 9em;
+                    background-image: linear-gradient(to bottom right, #81c2de, #4f92ac);
+                    transition: all 0.4s ease-out;
+                }
+                .wrapper__links {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 70%;
+                }
+                
+                .social-link--linkedin {
+                    color: #2d76b0;
+                }
+                .social-link--github {
+                    color: #000;
+                }
+
+                .social-link .social-svg {
+                    width: 4.8rem;
+                    height: 4.8rem;
+                }
+                .social-link .social-svg .social-group__icon {
+                    fill: #191308;
+                    transition: all 0.2s;
+                }
+                .social-link .social-svg .social-group__inner-circle {
+                    fill: transparent;
+                    transition: all 0.2s;
+                }
+                .social-link .social-svg .social-group__outline {
+                    stroke: #191308;
+                    transform-origin: 50% 50%;
+                    transition: all 0.2s;
+                }
+                .social-link .social-svg:hover .social-group__icon, .social-link .social-svg:active .social-group__icon, .social-link .social-svg:focus .social-group__icon {
+                    fill: #FFFBFA;
+                    transition: all 0.45s;
+                }
+                .social-link .social-svg:hover .social-group__inner-circle, .social-link .social-svg:active .social-group__inner-circle, .social-link .social-svg:focus .social-group__inner-circle {
+                    fill: currentColor;
+                    transition: all 0.45s;
+                }
+                .social-link .social-svg:hover .social-group__outline, .social-link .social-svg:active .social-group__outline, .social-link .social-svg:focus .social-group__outline {
+                    stroke: currentColor;
+                    transform: scale(1.1);
+                    transition: all 0.45s;
+                }
+            </style>
+            <div class="wrapper">
+                <div class="wrapper__links">
+                <a class="social-link social-link--github" id="github" href="">
+                    <svg class="social-svg" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                    <title>
+                        Github
+                    </title>
+                    <g class="social-group" fill="none" fill-rule="evenodd">
+                        <circle class="social-group__outline" stroke="#000" stroke-width="20" cx="300" cy="300" r="262.5" />
+                        <circle class="social-group__inner-circle" fill="#000" cx="300" cy="300" r="252.5" />
+                        <path class="social-group__icon" d="M300 150c-82.8348 0-150 68.8393-150 153.817 0 67.9687 42.991 125.558 102.5893 145.9151 7.5 1.4063 10.2455-3.3482 10.2455-7.433 0-3.683-.134-13.3259-.2009-26.183-41.7187 9.308-50.558-20.625-50.558-20.625-6.8304-17.7456-16.6741-22.5-16.6741-22.5-13.5938-9.576 1.0044-9.375 1.0044-9.375 15.067 1.0714 22.9688 15.8705 22.9688 15.8705 13.3929 23.5045 35.0893 16.741 43.6607 12.7902 1.3393-9.9107 5.2232-16.741 9.509-20.558-33.2813-3.884-68.3036-17.076-68.3036-76.0045 0-16.808 5.8259-30.5357 15.4018-41.25-1.5402-3.884-6.6965-19.5536 1.4732-40.7143 0 0 12.5893-4.1518 41.25 15.7366 11.9866-3.4152 24.7768-5.0893 37.567-5.1562 12.7231.067 25.5803 1.741 37.5669 5.1562 28.6607-19.8884 41.183-15.7366 41.183-15.7366 8.1697 21.1607 3.0134 36.8304 1.4733 40.7143 9.5758 10.7812 15.4017 24.509 15.4017 41.25 0 59.0625-35.0892 72.0536-68.5044 75.8705 5.3571 4.7545 10.1785 14.1295 10.1785 28.4598 0 20.558-.2009 37.1652-.2009 42.1875 0 4.0849 2.6786 8.9063 10.3125 7.3661C407.076 429.308 450 371.7187 450 303.817 450 218.8393 382.8348 150 300 150z"
+                        fill="#FFF" fill-rule="nonzero" />
+                    </g>
+                    </svg>
+                </a>
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="study">
+                    <rect width="64" height="64"/>
+                    <g id="smoke">
+                        <path id="smoke-2" d="M9 21L9.55279 19.8944C9.83431 19.3314 9.83431 18.6686 9.55279 18.1056L9 17L8.44721 15.8944C8.16569 15.3314 8.16569 14.6686 8.44721 14.1056L9 13" stroke="#797270"/>
+                        <path id="smoke-1" d="M6.5 22L7.05279 20.8944C7.33431 20.3314 7.33431 19.6686 7.05279 19.1056L6.5 18L5.94721 16.8944C5.66569 16.3314 5.66569 15.6686 5.94721 15.1056L6.5 14" stroke="#797270"/>
+                    </g>
+                    <g id="laptop">
+                        <rect id="laptop-base" x="17" y="28" width="20" height="3" fill="#F3F3F3" stroke="#453F3C" stroke-width="2"/>
+                        <rect id="laptop-screen" x="18" y="17" width="18" height="11" fill="#5A524E" stroke="#453F3C" stroke-width="2"/>
+                        <rect id="line-1" x="20" y="19" width="14" height="1" fill="#F78764"/>
+                        <rect id="line-2" x="20" y="21" width="14" height="1" fill="#F9AB82"/>
+                        <rect id="line-3" x="20" y="23" width="14" height="1" fill="#F78764"/>
+                        <rect id="line-4" x="20" y="25" width="14" height="1" fill="#F9AB82"/>
+                    </g>
+                    <g id="cup">
+                        <rect id="Rectangle 978" x="5" y="24" width="5" height="7" fill="#CCC4C4" stroke="#453F3C" stroke-width="2"/>
+                        <path id="Ellipse 416" d="M11 28C12.1046 28 13 27.1046 13 26C13 24.8954 12.1046 24 11 24" stroke="#453F3C" stroke-width="2"/>
+                        <rect id="Rectangle 996" x="6" y="25" width="3" height="1" fill="#D6D2D1"/>
+                    </g>
+                    <g id="books">
+                        <rect id="Rectangle 984" x="58" y="27" width="4" height="14" transform="rotate(90 58 27)" fill="#B16B4F" stroke="#453F3C" stroke-width="2"/>
+                        <rect id="Rectangle 985" x="56" y="23" width="4" height="14" transform="rotate(90 56 23)" fill="#797270" stroke="#453F3C" stroke-width="2"/>
+                        <rect id="Rectangle 986" x="60" y="19" width="4" height="14" transform="rotate(90 60 19)" fill="#F78764" stroke="#453F3C" stroke-width="2"/>
+                        <rect id="Rectangle 993" x="47" y="20" width="12" height="1" fill="#F9AB82"/>
+                        <rect id="Rectangle 994" x="43" y="24" width="12" height="1" fill="#54504E"/>
+                        <rect id="Rectangle 995" x="45" y="28" width="12" height="1" fill="#804D39"/>
+                    </g>
+                    <g id="desk">
+                        <rect id="Rectangle 973" x="4" y="31" width="56" height="5" fill="#797270" stroke="#453F3C" stroke-width="2"/>
+                        <rect id="Rectangle 987" x="10" y="36" width="30" height="6" fill="#797270" stroke="#453F3C" stroke-width="2"/>
+                        <rect id="Rectangle 975" x="6" y="36" width="4" height="24" fill="#797270" stroke="#453F3C" stroke-width="2"/>
+                        <rect id="Rectangle 974" x="40" y="36" width="18" height="24" fill="#797270" stroke="#453F3C" stroke-width="2"/>
+                        <line id="Line 129" x1="40" y1="48" x2="58" y2="48" stroke="#453F3C" stroke-width="2"/>
+                        <line id="Line 130" x1="22" y1="39" x2="28" y2="39" stroke="#453F3C" stroke-width="2"/>
+                        <line id="Line 142" x1="46" y1="42" x2="52" y2="42" stroke="#453F3C" stroke-width="2"/>
+                        <line id="Line 131" x1="46" y1="54" x2="52" y2="54" stroke="#453F3C" stroke-width="2"/>
+                        <rect id="Rectangle 988" x="11" y="37" width="28" height="1" fill="#54504E"/>
+                        <rect id="Rectangle 992" x="5" y="32" width="54" height="1" fill="#9E9492"/>
+                        <rect id="Rectangle 989" x="7" y="37" width="2" height="1" fill="#54504E"/>
+                        <rect id="Rectangle 990" x="41" y="37" width="16" height="1" fill="#54504E"/>
+                        <rect id="Rectangle 991" x="41" y="49" width="16" height="1" fill="#54504E"/>
+                        <line id="Line 143" y1="60" x2="64" y2="60" stroke="#453F3C" stroke-width="2"/>
+                    </g>
+                    </g>
+                </svg>
+                <a class="social-link social-link--linkedin" id="linkedin" href="https://www.linkedin.com/in/victor-rosario-nu%C3%B1ez/">
+                    <svg class="social-svg" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                    <title>
+                        LinkedIn
+                    </title>
+                    <g class="social-group" fill="none" fill-rule="evenodd">
+                        <circle class="social-group__outline" stroke="#000" stroke-width="20" cx="300" cy="300" r="262.5" />
+                        <circle class="social-group__inner-circle" fill="#2D76B0" cx="300" cy="300" r="252.5" />
+                        <path class="social-group__icon" d="M278.9308 253.1923h43.5769v20.0539h.5923c6.0923-11.5077 20.9-23.6077 43.0692-23.6077 46.0308 0 54.577 30.2923 54.577 69.723v80.2154h-45.4385v-71.1615c0-17.0077-.2539-38.8385-23.6077-38.8385-23.6923 0-27.2462 18.5308-27.2462 37.5693v72.4307h-45.4384l-.0846-146.3846zm-74.1231 0h45.523V399.577h-45.523V253.1923zm22.8461-72.7692c14.5539 0 26.4 11.8461 26.4 26.4 0 14.5538-11.8461 26.4-26.4 26.4-14.6384 0-26.4-11.8462-26.4-26.4 0-14.5539 11.7616-26.4 26.4-26.4z"
+                        fill="#000" fill-rule="nonzero" />
+                    </g>
+                    </svg>
+                </a>
+                </div>
+            </div>
+        </footer>
+    </body>
+  <!-- 
+    .................../ JS Code for change content /...................... -->
+
+      <!-- 
+    .................../ JS Code for smooth scrolling /...................... -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on("click", function (event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+                    
+                    // Store hash
+                    var hash = this.hash;
+                    
+                    // Store id
+                    var clickedId = this.name;
+                    var contentDivs = document.getElementById('general-container').getElementsByTagName('div');
+                    for (i=0; i<contentDivs.length; i++) {
+                        if (contentDivs[i].id != clickedId && contentDivs[i].className.includes('principal')) {
+                            contentDivs[i].className = 'principal hide';
+                        } else if (contentDivs[i].className.includes('principal')){
+                            contentDivs[i].className = clickedId+' principal';
+                        }
+                    }
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $("html, body").animate(
+                        {
+                            scrollTop:0,
+                        },
+                        800,
+                        function () {
+                            // Add hash (#) to URL when done scrolling (default click behavior)
+                            window.location.hash = hash;
+                        }
+                    );
+                } // End if
+            });
+        });
+
+        const maquinaEscribir = (text = '',tiempo = 200, etiqueta = '') => {
+            let arrayCaracteres = text.split('')
+            etiqueta.innerHTML = ''
+            let i = 0
+            let j = text.length
+            let escribir = setInterval(function(){
+                if (i === arrayCaracteres.length) {
+                return
+                } else {
+                    etiqueta.innerHTML += arrayCaracteres[i]
+                    i++
+                }
+            }, tiempo)
+        }
+
+        const maquina =  document.getElementById('maquina-escribir')
+
+        maquinaEscribir("I am currently living in Seville, working at Idener. Idener is an european company composed by a team of engineers, scientists and software" +
+                        " developers exploring the potential of AI for solving challenging science and engineering problems. Researcher is the role I am fulfilling at this company. " +
+                        " Having studied at the University of Seville and finishing my degree in computer engineer with a final degree project in applied Algebra about Hadamard matrices,"+
+                        " I have developed this webpage so it is easier to know about me, my projects, past experiences and what I am heading for.", 30, maquina)
+    </script>
+    
+</html>
